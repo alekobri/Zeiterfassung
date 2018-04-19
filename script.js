@@ -1,5 +1,6 @@
 $("document").ready(function(){
 
+// Setting todays date as default
 var today = new Date();
 var strDate = today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
 $("#date").append(strDate);
@@ -123,10 +124,25 @@ $("#carDelete").on("click", function(d) {
 });
 
   $(function(){
+      $("#priceForm").submit(function(e) {
+          var value = $("#priceInput").val();
+          $("#price").text(value)
+          $("#priceInput").removeClass("norm").addClass("done");
+          e.preventDefault();
+      });
+  });
+
+// Delete Button
+$("#priceDelete").on("click", function(d) {
+      $("#priceInput").val(" ");  
+      d.preventDefault(); 
+});
+
+  $(function(){
       $("#matForm").submit(function(e) {
           var value = $("#matInput").val();
           $("#mat").text(value)
-          $("#matInput").removeClass("norm").addClass("done");
+          $("#matInput").removeClass("opt").addClass("done");
           e.preventDefault();
       });
   });
@@ -141,7 +157,7 @@ $("#matDelete").on("click", function(d) {
       $("#budForm").submit(function(e) {
           var value = $("#budInput").val();
           $("#bud").text(value)
-          $("#budInput").removeClass("norm").addClass("done");
+          $("#budInput").removeClass("opt").addClass("done");
           e.preventDefault();
       });
   });
@@ -150,6 +166,60 @@ $("#matDelete").on("click", function(d) {
 $("#budDelete").on("click", function(d) {
       $("#budInput").val(" ");  
       d.preventDefault(); 
+});
+
+$("#twoAdd").on("click", function(add) {
+      $("#mat2Form,#bud2Form").removeClass("hide").addClass("show");
+      $("#twoAdd").removeClass("show").addClass("hide");
+      add.preventDefault(); 
+});
+
+$("#twoDel").on("click", function(del) {
+      $("#twoAdd").removeClass("hide").addClass("show");
+      $("#mat2Form,#bud2Form").removeClass("show").addClass("hide");
+      del.preventDefault(); 
+});
+
+  $(function(){
+      $("#matForm").submit(function(e) {
+          var value = $("#matInput").val();
+          $("#mat").text(value)
+          $("#matInput").removeClass("opt").addClass("done");
+          e.preventDefault();
+      });
+  });
+
+// Delete Button
+$("#mat2Delete").on("click", function(d) {
+      $("#mat2Input").val(" ");  
+      d.preventDefault(); 
+});
+
+  $(function(){
+      $("#bud2Form").submit(function(e) {
+          var value = $("#bud2Input").val();
+          $("#bud2").text(value)
+          $("#bud2Input").removeClass("opt").addClass("done");
+          e.preventDefault();
+      });
+  });
+
+// Delete Button
+$("#bud2Delete").on("click", function(d) {
+      $("#bud2Input").val(" ");  
+      d.preventDefault(); 
+});
+
+$("#threeAdd").on("click", function(add) {
+      $("#mat3Form,#bud3Form").removeClass("hide").addClass("show");
+      $("#threeAdd,#twoDel").removeClass("show").addClass("hide");
+      add.preventDefault(); 
+});
+
+$("#threeDel").on("click", function(del) {
+      $("#threeAdd").removeClass("hide").addClass("show");
+      $("#mat3Form,#bud3Form").removeClass("show").addClass("hide");
+      del.preventDefault(); 
 });
 
 // Excel-Export Button

@@ -2,6 +2,10 @@
    background-color: lightpink;
 }
 
+.opt {
+   background-color: peachpuff;
+}
+
 .done{
    background-color: lightgreen;
 }
@@ -17,3 +21,4 @@
 #car {
    background-color: darkorchid;
 }
+
