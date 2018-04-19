@@ -71,7 +71,8 @@
   </table>
   </div>
 
-<div class="align-self-center">
+<div>
+
 <form class="navbar-form" id="custForm">
     <input type="text" class="form-control norm" id="custInput" placeholder="Vor- & Nachname Kunde">
     <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
@@ -107,8 +108,7 @@
     <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
     <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="carDelete"></button>
 </form>
-    </div>
-    <div class="form-row">
+
 <form class="navbar-form" id="descForm">
     <input type="text" class="form-control norm" id="descInput" placeholder="Beschreibung der Leistung">
     <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
@@ -178,7 +178,7 @@
 </form>
 
 <form class="navbar-form hide" id="bud4Form">
-    <input type="text" class="form-control opt" id="bud4Input" placeholder="Materialkosten IV>
+    <input type="text" class="form-control opt" id="bud4Input" placeholder="Materialkosten IV">
     <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
     <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud4Delete"></button>
     <br>
@@ -186,8 +186,36 @@
     <button class="btn glyphicon glyphicon-trash btn-danger show col-md-1" id="fourDel"></button>
 </form>
 
-    <button id="clickExcel" class="btn btn-primary glyphicon glyphicon-save-file col-md-2"> Export</button>
-  </div> </div>
+<form class="navbar-form hide" id="mat5Form">
+    <input type="text" class="form-control opt" id="mat5Input" placeholder="Material V">
+    <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
+    <button class="btn glyphicon glyphicon-remove btn-danger" id="mat5Delete"></button>
+</form>
+
+<form class="navbar-form hide" id="bud5Form">
+    <input type="text" class="form-control opt" id="bud5Input" placeholder="Materialkosten V">
+    <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
+    <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud5Delete"></button>
+    <br>
+    <button class="btn glyphicon glyphicon-plus btn-info show col-md-1" id="sixAdd"></button>
+    <button class="btn glyphicon glyphicon-trash btn-danger show col-md-1" id="fiveDel"></button>
+</form>
+
+<form class="navbar-form hide" id="mat6Form">
+    <input type="text" class="form-control opt" id="mat6Input" placeholder="Material VI">
+    <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
+    <button class="btn glyphicon glyphicon-remove btn-danger" id="mat6Delete"></button>
+</form>
+
+<form class="navbar-form hide" id="bud6Form">
+    <input type="text" class="form-control opt" id="bud6Input" placeholder="Materialkosten VI">
+    <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
+    <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud6Delete"></button>
+    <br>
+    <button class="btn glyphicon glyphicon-trash btn-danger show col-md-1" id="fiveDel"></button>
+</form>
+<br><form class="navbar-form"><button id="clickExcel" type="submit" class="btn btn-primary col-md-2">Export</button></form>
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="script.js"></script>

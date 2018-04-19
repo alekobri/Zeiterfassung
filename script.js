@@ -218,7 +218,41 @@ $("#twoDel").on("click", function(del) {
       del.preventDefault(); 
 });
 
+  $(function(){
+      $("#mat3Form").submit(function(e) {
+          var value = $("#mat3Input").val();
+          $("#mat3").text(value)
+          $("#mat3Input").removeClass("opt").addClass("done");
+          e.preventDefault();
+      });
+  });
 
+// Delete Button
+$("#mat3Delete").on("click", function(d) {
+      $("#mat3Input").val(" ");  
+      d.preventDefault(); 
+});
+
+  $(function(){
+      $("#bud3Form").submit(function(e) {
+          var value = $("#bud3Input").val();
+          $("#bud3").text(value)
+          $("#bud3Input").removeClass("opt").addClass("done");
+          e.preventDefault();
+      });
+  });
+
+// Delete Button
+$("#bud3Delete").on("click", function(d) {
+      $("#bud3Input").val(" ");  
+      d.preventDefault(); 
+});
+
+$("#fourAdd").on("click", function(add) {
+      $("#mat4Form,#bud4Form").removeClass("hide").addClass("show");
+      $("#fourAdd,#threeDel").removeClass("show").addClass("hide");
+      add.preventDefault(); 
+});
 
 $("#threeDel").on("click", function(del) {
       $("#threeAdd").removeClass("hide").addClass("show");
@@ -229,7 +263,7 @@ $("#threeDel").on("click", function(del) {
 // Excel-Export Button
 $( "#clickExcel" ).click(function() {  
   var exportFile = $("#export").html();    
-  window.open('data:application/vnd.ms-excel,' + encodeURIComponent($("#export").html()));
+  window.open("data:application/vnd.ms-excel," + encodeURIComponent($("#export").html()));
 });
 
 });
