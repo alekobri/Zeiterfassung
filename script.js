@@ -174,17 +174,11 @@ $("#twoAdd").on("click", function(add) {
       add.preventDefault(); 
 });
 
-$("#twoDel").on("click", function(del) {
-      $("#twoAdd").removeClass("hide").addClass("show");
-      $("#mat2Form,#bud2Form").removeClass("show").addClass("hide");
-      del.preventDefault(); 
-});
-
   $(function(){
-      $("#matForm").submit(function(e) {
-          var value = $("#matInput").val();
-          $("#mat").text(value)
-          $("#matInput").removeClass("opt").addClass("done");
+      $("#mat2Form").submit(function(e) {
+          var value = $("#mat2Input").val();
+          $("#mat2").text(value)
+          $("#mat2Input").removeClass("opt").addClass("done");
           e.preventDefault();
       });
   });
@@ -215,6 +209,16 @@ $("#threeAdd").on("click", function(add) {
       $("#threeAdd,#twoDel").removeClass("show").addClass("hide");
       add.preventDefault(); 
 });
+
+$("#twoDel").on("click", function(del) {
+      $("#twoAdd").removeClass("hide").addClass("show");
+      $("#mat2Form,#bud2Form").removeClass("show").addClass("hide");
+      $("#mat2,#bud2").text(" ");
+      $("#mat2Input,#bud2Input").removeClass("done").addClass("opt");
+      del.preventDefault(); 
+});
+
+
 
 $("#threeDel").on("click", function(del) {
       $("#threeAdd").removeClass("hide").addClass("show");
