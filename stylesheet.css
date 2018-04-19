@@ -1,0 +1,19 @@
+.norm {
+   background-color: lightpink;
+}
+
+.done{
+   background-color: lightgreen;
+}
+
+.show {
+   visibility: visible;
+}
+
+.hide {
+   visibility: none;
+}
+
+#car {
+   background-color: darkorchid;
+}
