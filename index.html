@@ -11,7 +11,7 @@
 <div id="export">
 <table style="display:">
 <tr>
-<th colspan="4" colrow="5"><img src='https://d2wjy5btw73wdu.cloudfront.net/schweizseiten_com/images/40000_41999/41170.gif' alt=''/></th>
+<th colspan="4" rowspan="5"><img src='https://d2wjy5btw73wdu.cloudfront.net/schweizseiten_com/images/40000_41999/41170.gif' alt=''/></th>
 <th colspan="2">Kunde</th>
 <th colspan="2">Strasse</th>
 <th colspan="1">PLZ</th>
@@ -20,10 +20,10 @@
 </tr>
 <tr>
 <td colspan="4"></td>
-<td colspan="2" colrow="2" id="cust">Vorname Name</td>
-<td colspan="2" colrow="2" id="street">Strasse Nr.</td>
-<td colspan="1" colrow="2"id="plz" >PLZ</td>
-<td colspan="2" colrow="2" id="region">Ort</td>
+<td colspan="2" rowspan="2" id="cust">Vorname Name</td>
+<td colspan="2" rowspan="2" id="street">Strasse Nr.</td>
+<td colspan="1" rowspan="2"id="plz" >PLZ</td>
+<td colspan="2" rowspan="2" id="region">Ort</td>
 <td id="date"></td>
 </tr>
 <tr>
@@ -71,8 +71,8 @@
 </table>
 </div>
 
-<div id="inputForm row">
-<div class="column">
+<div class="flex-container">
+<div class="1st">
 <form class="navbar-form" id="custForm">
 <input type="text" class="form-control norm" id="custInput" placeholder="Vor- & Nachname Kunde">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
@@ -127,7 +127,7 @@
 <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="priceDelete"></button>
 </form>
 </div>
-<div class="column">
+<div class="2nd">
 <form class="navbar-form" id="matForm">
 <input type="text" class="form-control opt" id="matInput" placeholder="Material I">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
@@ -135,93 +135,116 @@
 </form>
 
 <form class="navbar-form show" id="budForm">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="budInput" placeholder="Materialkosten I">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="budDelete"></button>
-<br>
+</div>
 <button class="btn glyphicon glyphicon-plus btn-info show" id="twoAdd"></button>
 </form>
 
 <form class="navbar-form hide" id="mat2Form">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="mat2Input" placeholder="Material II">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button class="btn glyphicon glyphicon-remove btn-danger" id="mat2Delete"></button>
-
+</div>
 </form>
 
 <form class="navbar-form hide" id="bud2Form">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="bud2Input" placeholder="Materialkosten II">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud2Delete"></button>
-<br>
+</div>
 <div class="wrapper">
 <button class="btn glyphicon glyphicon-plus btn-info show" id="threeAdd"></button>
 <button class="btn glyphicon glyphicon-trash btn-danger show" id="twoDel"></button>
 </div>
 </form>
 
+<div class="3rd">
 <form class="navbar-form hide" id="mat3Form">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="mat3Input" placeholder="Material III">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button class="btn glyphicon glyphicon-remove btn-danger" id="mat3Delete"></button>
+</div>
 </form>
 
 <form class="navbar-form hide" id="bud3Form">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="bud3Input" placeholder="Materialkosten III">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud3Delete"></button>
-<br>
+</div>
+<div class="wrapper">
 <button class="btn glyphicon glyphicon-plus btn-info show" id="fourAdd"></button>
 <button class="btn glyphicon glyphicon-trash btn-danger show" id="threeDel"></button>
+</div>
 </form>
 
 <form class="navbar-form hide" id="mat4Form">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="mat4Input" placeholder="Material IV">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button class="btn glyphicon glyphicon-remove btn-danger" id="mat4Delete"></button>
+</div>
 </form>
 
 <form class="navbar-form hide" id="bud4Form">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="bud4Input" placeholder="Materialkosten IV">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud4Delete"></button>
-<br>
+</div>
+<div class="wrapper">
 <button class="btn glyphicon glyphicon-plus btn-info show" id="fiveAdd"></button>
 <button class="btn glyphicon glyphicon-trash btn-danger show" id="fourDel"></button>
+</div>
 </form>
 
 <form class="navbar-form hide" id="mat5Form">
+<div class="wrapper">
 	<input type="text" class="form-control opt" id="mat5Input" placeholder="Material V">
 	<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 	<button class="btn glyphicon glyphicon-remove btn-danger" id="mat5Delete"></button>
+</div>
 </form>
 
 <form class="navbar-form hide" id="bud5Form">
+<div class="wrapper">
 	<input type="text" class="form-control opt" id="bud5Input" placeholder="Materialkosten V">
 	<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 	<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud5Delete"></button>
-<br>
+</div>
+<div class="wrapper">
 <button class="btn glyphicon glyphicon-plus btn-info show" id="sixAdd"></button>
 <button class="btn glyphicon glyphicon-trash btn-danger show " id="fiveDel"></button>
+</div>
 </form>
 
 <form class="navbar-form hide" id="mat6Form">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="mat6Input" placeholder="Material VI">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button class="btn glyphicon glyphicon-remove btn-danger" id="mat6Delete"></button>
+</div>
 </form>
 
 <form class="navbar-form hide" id="bud6Form">
+<div class="wrapper">
 <input type="text" class="form-control opt" id="bud6Input" placeholder="Materialkosten VI">
 <button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
 <button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud6Delete"></button>
-<br>
-<button class="btn glyphicon glyphicon-trash btn-danger show" id="fiveDel"></button>
+</div>
+<button class="btn glyphicon glyphicon-trash btn-danger show" id="sixDel"></button>
 </form>
 </div>
+</div>
 <br>
-<div id="column">
-<form class="navbar-form"><button id="clickExcel" type="submit" class="btn btn-primary">Export</button></form>
+<div>
+<form class="navbar-form row"><button id="clickExcel" type="submit" class="btn btn-primary">Export</button></form>
 </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

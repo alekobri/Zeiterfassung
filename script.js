@@ -255,8 +255,140 @@
     });
 
     $("#threeDel").on("click", function(del) {
-          $("#threeAdd").removeClass("hide").addClass("show");
+          $("#threeAdd,#twoDel").removeClass("hide").addClass("show");
           $("#mat3Form,#bud3Form").removeClass("show").addClass("hide");
+          del.preventDefault(); 
+    });
+	
+      $(function(){
+          $("#mat4Form").submit(function(e) {
+              var value = $("#mat4Input").val();
+              $("#mat4").text(value)
+              $("#mat4Input").removeClass("opt").addClass("done");
+              e.preventDefault();
+          });
+      });
+
+    // Delete Button
+    $("#mat4Delete").on("click", function(d) {
+          $("#mat4Input").val(" ");  
+          d.preventDefault(); 
+    });
+	
+      $(function(){
+          $("#bud4Form").submit(function(e) {
+              var value = $("#bud4Input").val();
+              $("#bud4").text(value)
+              $("#bud4Input").removeClass("opt").addClass("done");
+              e.preventDefault();
+          });
+      });
+
+    // Delete Button
+    $("#bud4Delete").on("click", function(d) {
+          $("#bud4Input").val(" ");  
+          d.preventDefault(); 
+    });
+	
+	    $("#fiveAdd").on("click", function(add) {
+          $("#mat5Form,#bud5Form").removeClass("hide").addClass("show");
+          $("#fiveAdd,#fourDel").removeClass("show").addClass("hide");
+          add.preventDefault(); 
+    });
+
+    $("#fourDel").on("click", function(del) {
+          $("#fourAdd,#threeDel").removeClass("hide").addClass("show");
+          $("#mat4Form,#bud4Form").removeClass("show").addClass("hide");
+          del.preventDefault(); 
+    });
+	
+      $(function(){
+          $("#mat4Form").submit(function(e) {
+              var value = $("#mat4Input").val();
+              $("#mat4").text(value)
+              $("#mat4Input").removeClass("opt").addClass("done");
+              e.preventDefault();
+          });
+      });
+
+    // Delete Button
+    $("#mat4Delete").on("click", function(d) {
+          $("#mat4Input").val(" ");  
+          d.preventDefault(); 
+    });
+	
+      $(function(){
+          $("#bud4Form").submit(function(e) {
+              var value = $("#bud4Input").val();
+              $("#bud4").text(value)
+              $("#bud4Input").removeClass("opt").addClass("done");
+              e.preventDefault();
+          });
+      });
+
+    // Delete Button
+    $("#bud4Delete").on("click", function(d) {
+          $("#bud4Input").val(" ");  
+          d.preventDefault(); 
+    });
+	
+	    $("#fiveAdd").on("click", function(add) {
+          $("#mat5Form,#bud5Form").removeClass("hide").addClass("show");
+          $("#fiveAdd,#fourDel").removeClass("show").addClass("hide");
+          add.preventDefault(); 
+    });
+
+    $("#fourDel").on("click", function(del) {
+          $("#fourAdd,#fourDel").removeClass("hide").addClass("show");
+          $("#mat4Form,#bud4Form").removeClass("show").addClass("hide");
+          del.preventDefault(); 
+    });
+	
+      $(function(){
+          $("#mat5Form").submit(function(e) {
+              var value = $("#mat5Input").val();
+              $("#mat5").text(value)
+              $("#mat5Input").removeClass("opt").addClass("done");
+              e.preventDefault();
+          });
+      });
+
+    // Delete Button
+    $("#mat5Delete").on("click", function(d) {
+          $("#mat5Input").val(" ");  
+          d.preventDefault(); 
+    });
+	
+      $(function(){
+          $("#bud5Form").submit(function(e) {
+              var value = $("#bud5Input").val();
+              $("#bud5").text(value)
+              $("#bud5Input").removeClass("opt").addClass("done");
+              e.preventDefault();
+          });
+      });
+
+    // Delete Button
+    $("#bud5Delete").on("click", function(d) {
+          $("#bud5Input").val(" ");  
+          d.preventDefault(); 
+    });
+	
+	    $("#sixAdd").on("click", function(add) {
+          $("#mat6Form,#bud6Form").removeClass("hide").addClass("show");
+          $("#sixAdd,#fiveDel").removeClass("show").addClass("hide");
+          add.preventDefault(); 
+    });
+
+    $("#fiveDel").on("click", function(del) {
+          $("#fiveAdd,#fourDel").removeClass("hide").addClass("show");
+          $("#mat5Form,#bud5Form").removeClass("show").addClass("hide");
+          del.preventDefault(); 
+    });
+	
+    $("#sixDel").on("click", function(del) {
+          $("#sixAdd,#fiveDel").removeClass("hide").addClass("show");
+          $("#mat6Form,#bud6Form").removeClass("show").addClass("hide");
           del.preventDefault(); 
     });
 
