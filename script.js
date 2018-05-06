@@ -126,8 +126,9 @@
       $(function(){
           $("#priceForm").submit(function(e) {
               var value = $("#priceInput").val();
-              $("#price").text(value)
+              $("#price").text(value);
               $("#priceInput").removeClass("norm").addClass("done");
+			  $("#tots").text(value);
               e.preventDefault();
           });
       });
@@ -391,9 +392,14 @@
           $("#mat6Form,#bud6Form").removeClass("show").addClass("hide");
           del.preventDefault(); 
     });
+	
+	// Total Sum
+	
+	
 
     // Excel-Export Button
     $( "#clickExcel" ).click(function() {  
+	
       var exportFile = $("#export").html();    
       window.open("data:application/vnd.ms-excel," + encodeURIComponent($("#export").html()));
     });

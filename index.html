@@ -10,32 +10,40 @@
 
 <div id="export">
 <table style="display:">
+<thead>
 <tr>
-<th colspan="4" rowspan="5"><img src='https://d2wjy5btw73wdu.cloudfront.net/schweizseiten_com/images/40000_41999/41170.gif' alt=''/></th>
-<th colspan="2">Kunde</th>
-<th colspan="2">Strasse</th>
-<th colspan="1">PLZ</th>
-<th colspan="2">Ort</th>
-<th>Datum</th>
+<th colspan="5" rowspan="7"><img src='https://d2wjy5btw73wdu.cloudfront.net/schweizseiten_com/images/40000_41999/41170.gif' alt=''/></th>
+<th colspan="2" rowspan="1">Kunde</th>
+<th colspan="2" rowspan="1">Strasse</th>
+<th colspan="1" rowspan="1">PLZ</th>
+<th colspan="2" rowspan="1">Ort</th>
+<th colspan="1" rowspan="1">Datum</th>
 </tr>
 <tr>
-<td colspan="4"></td>
-<td colspan="2" rowspan="2" id="cust">Vorname Name</td>
-<td colspan="2" rowspan="2" id="street">Strasse Nr.</td>
-<td colspan="1" rowspan="2"id="plz" >PLZ</td>
-<td colspan="2" rowspan="2" id="region">Ort</td>
-<td id="date"></td>
+<td colspan="2" rowspan="1" id="cust">Vorname Name</td>
+<td colspan="2" rowspan="1" id="street">Strasse Nr.</td>
+<td colspan="1" rowspan="1" id="plz" >PLZ</td>
+<td colspan="2" rowspan="1" id="region">Ort</td>
+<td colspan="1" rowspan="1" id="date"></td>
 </tr>
+<tr>
+<td rowspan="5"></td>
+</tr>
+</thead>
+<tbody>
 <tr>
 <th>Beschreibung</th>
 <th>Arbeitszeit</th>
 <th>Preis</th>
+<tr></tr>
 </tr>
 <tr>
 <td id="desc">Tätigkeit</td>
 <td id="time">Aufwand</td>
 <td id="price">Preis</td>
 </tr>
+</tbody>
+<tfoot>
 <tr>
 <th>Material</th>
 <th>Preis</th>
@@ -65,9 +73,10 @@
 <td id="bud6"></td>
 </tr>
 <tr>
-<th>Total</th>
+<th>Total:</th>
 <td id="tot">TOT</td>
 </tr>
+</tfoot>
 </table>
 </div>
 
@@ -244,6 +253,7 @@
 </div>
 <br>
 <div>
+Totaler Preis: <div id="tots">0.00 CHF</div>
 <form class="navbar-form row"><button id="clickExcel" type="submit" class="btn btn-primary">Export</button></form>
 </div>
 </div>
