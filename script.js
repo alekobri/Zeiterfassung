@@ -83,7 +83,8 @@
 
     // Delete Button
     $("#dateDelete").on("click", function(d) {
-          $("#date").append(strDate);
+          $("#date").text(strDate);
+		  $("#dateInput").val(" ");
           d.preventDefault(); 
     });
 
