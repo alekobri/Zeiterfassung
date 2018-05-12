@@ -16,7 +16,9 @@
 
     // Delete Button
     $("#custDelete").on("click", function(d) {
-          $("#custInput").val(" ");
+          $("#cust").text(" ");
+		  $("#custInput").val(" ");
+		  $("#custInput").removeClass("done").addClass("norm");
           d.preventDefault(); 
     });
 
@@ -31,7 +33,9 @@
 
     // Delete Button
     $("#streetDelete").on("click", function(d) {
-          $("#streetInput").val(" "); 
+          $("#street").text(" ");
+		  $("#streetInput").val(" ");
+		  $("#streetInput").removeClass("done").addClass("norm");
           d.preventDefault(); 
     });
 
@@ -46,7 +50,9 @@
 
     // Delete Button
     $("#plzDelete").on("click", function(d) {
-          $("#plzInput").val(" ");  
+          $("#plz").text(" ");
+		  $("#plzInput").val(" ");
+		  $("#plzInput").removeClass("done").addClass("norm");
           d.preventDefault(); 
     });
 
@@ -61,7 +67,9 @@
 
     // Delete Button
     $("#regionDelete").on("click", function(d) {
-          $("#regionInput").val(" ");  
+          $("#region").text(" ");
+		  $("#regionInput").val(" ");
+		  $("#regionInput").removeClass("done").addClass("norm");
           d.preventDefault(); 
     });
 
@@ -75,7 +83,7 @@
 
     // Delete Button
     $("#dateDelete").on("click", function(d) {
-          $("#dateInput").val(" ");  
+          $("#date").append(strDate);
           d.preventDefault(); 
     });
 
@@ -90,7 +98,9 @@
 
     // Delete Button
     $("#descDelete").on("click", function(d) {
-          $("#descInput").val(" ");  
+          $("#desc").text(" ");
+		  $("#descInput").val(" ");
+		  $("#descInput").removeClass("done").addClass("norm");		  
           d.preventDefault(); 
     });
 
@@ -105,7 +115,9 @@
 
     // Delete Button
     $("#timeDelete").on("click", function(d) {
-          $("#timeInput").val(" ");
+          $("#time").text(" ");
+		  $("#timeInput").val(" ");
+		  $("#timeInput").removeClass("done").addClass("norm");	
           d.preventDefault();   
     });
 
@@ -123,26 +135,31 @@
           d.preventDefault();   
     });
 
+	
+	var valueSer = null;
       $(function(){
           $("#priceForm").submit(function(e) {
-              var value = $("#priceInput").val();
-              $("#price").text(value);
+			  valueSer = $("#priceInput").val();
+			  valueSer = Number(valueSer).toFixed(2);
+              $("#price,#tot,#tots").text(valueSer);
               $("#priceInput").removeClass("norm").addClass("done");
-			  $("#tots").text(value);
               e.preventDefault();
           });
       });
 
     // Delete Button
     $("#priceDelete").on("click", function(d) {
-          $("#priceInput").val(" ");  
+          $("#price").text(null);
+		  parseFloat($("#priceInput").val(" "));
+		  $("#priceInput").removeClass("done").addClass("norm");
+			$("#tot,#tots").text(0.00);
           d.preventDefault(); 
     });
 
       $(function(){
           $("#matForm").submit(function(e) {
               var value = $("#matInput").val();
-              $("#mat").text(value)
+              $("#mat").text(value);
               $("#matInput").removeClass("opt").addClass("done");
               e.preventDefault();
           });
@@ -150,22 +167,32 @@
 
     // Delete Button
     $("#matDelete").on("click", function(d) {
-          $("#matInput").val(" ");  
+          $("#mat").text(" ");
+		  $("#matInput").val(" ");
+		  $("#matInput").removeClass("done").addClass("opt");	
           d.preventDefault(); 
     });
-
+		
+	var valueBud = null;	
+	var valueTot = null;
       $(function(){
           $("#budForm").submit(function(e) {
-              var value = $("#budInput").val();
-              $("#bud").text(value)
+              valueBud = $("#budInput").val();
+              $("#bud").text(valueBud);
               $("#budInput").removeClass("opt").addClass("done");
+			  valueTot = parseFloat(valueSer) + parseFloat(valueBud);
+			  valueTot = valueTot.toFixed(2);
+			  $("#tot,#tots").text(valueTot);
               e.preventDefault();
           });
       });
 
     // Delete Button
     $("#budDelete").on("click", function(d) {
-          $("#budInput").val(" ");  
+          parseFloat($("#budInput").val(" "));
+		  $("#bud").text(null);
+		  $("#tot,#tots").text(valueSer);
+		  $("#budInput").removeClass("done").addClass("opt");	
           d.preventDefault(); 
     });
 
@@ -186,22 +213,32 @@
 
     // Delete Button
     $("#mat2Delete").on("click", function(d) {
-          $("#mat2Input").val(" ");  
+          $("#mat2").text(" ");
+		  $("#mat2Input").val(" ");
+		  $("#mat2Input").removeClass("done").addClass("opt");
           d.preventDefault(); 
     });
 
+	var valueBud2 = null;	
+	var valueTot2 = null;
       $(function(){
           $("#bud2Form").submit(function(e) {
-              var value = $("#bud2Input").val();
-              $("#bud2").text(value)
+              var valueBud2 = $("#bud2Input").val();
+              $("#bud2").text(valueBud2);
               $("#bud2Input").removeClass("opt").addClass("done");
+			  valueTot2 = parseFloat(valueTot) + parseFloat(valueBud2);
+			  valueTot2 = valueTot2.toFixed(2);
+			  $("#tot,#tots").text(valueTot2);
               e.preventDefault();
           });
       });
 
     // Delete Button
     $("#bud2Delete").on("click", function(d) {
-          $("#bud2Input").val(" ");  
+          $("#bud2").text(null);
+		  parseFloat($("#bud2Input").val(" "));
+		  $("#tot,#tots").text(valueTot);
+		  $("#bud2Input").removeClass("done").addClass("opt");
           d.preventDefault(); 
     });
 
@@ -216,6 +253,7 @@
           $("#mat2Form,#bud2Form").removeClass("show").addClass("hide");
           $("#mat2,#bud2").text(" ");
           $("#mat2Input,#bud2Input").removeClass("done").addClass("opt");
+		  $("#tot,#tots").text(valueTot);
           del.preventDefault(); 
     });
 
@@ -234,18 +272,25 @@
           d.preventDefault(); 
     });
 
+	var valueBud3 = null;	
+	var valueTot3 = null;
       $(function(){
           $("#bud3Form").submit(function(e) {
-              var value = $("#bud3Input").val();
-              $("#bud3").text(value)
+              var valueBud3 = $("#bud3Input").val();
+              $("#bud3").text(valueBud3)
               $("#bud3Input").removeClass("opt").addClass("done");
+			  valueTot3 = parseFloat(valueTot2) + parseFloat(valueBud3);
+			  valueTot3 = valueTot3.toFixed(2);
+			  $("#tot,#tots").text(valueTot3);
               e.preventDefault();
           });
       });
 
     // Delete Button
     $("#bud3Delete").on("click", function(d) {
-          $("#bud3Input").val(" ");  
+		$("#bud3").text(null);
+		parseFloat($("#bud3Input").val(" "));
+		  $("#tot,#tots").text(valueTot2);
           d.preventDefault(); 
     });
 
@@ -258,6 +303,7 @@
     $("#threeDel").on("click", function(del) {
           $("#threeAdd,#twoDel").removeClass("hide").addClass("show");
           $("#mat3Form,#bud3Form").removeClass("show").addClass("hide");
+		  $("#tot,#tots").text(valueTot2);
           del.preventDefault(); 
     });
 	
@@ -276,18 +322,25 @@
           d.preventDefault(); 
     });
 	
+	var valueBud4 = null;	
+	var valueTot4 = null;
       $(function(){
           $("#bud4Form").submit(function(e) {
-              var value = $("#bud4Input").val();
-              $("#bud4").text(value)
+              var valueBud4 = $("#bud4Input").val();
+              $("#bud4").text(valueBud4);
               $("#bud4Input").removeClass("opt").addClass("done");
+			  valueTot4 = parseFloat(valueTot3) + parseFloat(valueBud4);
+			  valueTot4 = valueTot4.toFixed(2);
+			  $("#tot,#tots").text(valueTot4);
               e.preventDefault();
           });
       });
 
     // Delete Button
     $("#bud4Delete").on("click", function(d) {
-          $("#bud4Input").val(" ");  
+          $("#bud4").text(null);
+			parseFloat($("#bud4Input").val(" "));
+		  $("#tot,#tots").text(valueTot3);		  
           d.preventDefault(); 
     });
 	
@@ -300,6 +353,7 @@
     $("#fourDel").on("click", function(del) {
           $("#fourAdd,#threeDel").removeClass("hide").addClass("show");
           $("#mat4Form,#bud4Form").removeClass("show").addClass("hide");
+		  $("#tot,#tots").text(valueTot3);
           del.preventDefault(); 
     });
 	
@@ -317,32 +371,27 @@
           $("#mat4Input").val(" ");  
           d.preventDefault(); 
     });
-	
-      $(function(){
-          $("#bud4Form").submit(function(e) {
-              var value = $("#bud4Input").val();
-              $("#bud4").text(value)
-              $("#bud4Input").removeClass("opt").addClass("done");
+      
+	var valueBud5 = null;	
+	var valueTot5 = null;
+	  $(function(){
+          $("#bud5Form").submit(function(e) {
+              var valueBud5 = $("#bud5Input").val();
+              $("#bud5").text(valueBud5);
+			  valueTot5 = parseFloat(valueTot4) + parseFloat(valueBud5);
+			  valueTot5 = valueTot5.toFixed(2);
+			  $("#tot,#tots").text(valueTot5);
+              $("#bud5Input").removeClass("opt").addClass("done");
               e.preventDefault();
           });
       });
 
     // Delete Button
-    $("#bud4Delete").on("click", function(d) {
-          $("#bud4Input").val(" ");  
+    $("#bud5Delete").on("click", function(d) {
+          $("#bud5").text(null);
+		parseFloat($("#bud5Input").val(" "));
+		  $("#tot,#tots").text(valueTot4);
           d.preventDefault(); 
-    });
-	
-	    $("#fiveAdd").on("click", function(add) {
-          $("#mat5Form,#bud5Form").removeClass("hide").addClass("show");
-          $("#fiveAdd,#fourDel").removeClass("show").addClass("hide");
-          add.preventDefault(); 
-    });
-
-    $("#fourDel").on("click", function(del) {
-          $("#fourAdd,#fourDel").removeClass("hide").addClass("show");
-          $("#mat4Form,#bud4Form").removeClass("show").addClass("hide");
-          del.preventDefault(); 
     });
 	
       $(function(){
@@ -360,21 +409,6 @@
           d.preventDefault(); 
     });
 	
-      $(function(){
-          $("#bud5Form").submit(function(e) {
-              var value = $("#bud5Input").val();
-              $("#bud5").text(value)
-              $("#bud5Input").removeClass("opt").addClass("done");
-              e.preventDefault();
-          });
-      });
-
-    // Delete Button
-    $("#bud5Delete").on("click", function(d) {
-          $("#bud5Input").val(" ");  
-          d.preventDefault(); 
-    });
-	
 	    $("#sixAdd").on("click", function(add) {
           $("#mat6Form,#bud6Form").removeClass("hide").addClass("show");
           $("#sixAdd,#fiveDel").removeClass("show").addClass("hide");
@@ -384,17 +418,54 @@
     $("#fiveDel").on("click", function(del) {
           $("#fiveAdd,#fourDel").removeClass("hide").addClass("show");
           $("#mat5Form,#bud5Form").removeClass("show").addClass("hide");
+		  $("#tot,#tots").text(valueTot4);
           del.preventDefault(); 
     });
+	
+	var valueBud6 = null;	
+	var valueTot6 = null;
+	  $(function(){
+          $("#bud6Form").submit(function(e) {
+              var valueBud6 = $("#bud6Input").val();
+              $("#bud6").text(valueBud6);
+			  valueTot6 = parseFloat(valueTot5) + parseFloat(valueBud6);
+			  valueTot6 = valueTot6.toFixed(2);
+			  $("#tot,#tots").text(valueTot6);
+              $("#bud6Input").removeClass("opt").addClass("done");
+              e.preventDefault();
+          });
+      });
+
+    // Delete Button
+    $("#bud6Delete").on("click", function(d) {
+          $("#bud6").text(null);
+		parseFloat($("#bud6Input").val(" "));
+		  $("#tot,#tots").text(valueTot5);
+          d.preventDefault(); 
+    });
+	
+      $(function(){
+          $("#mat6Form").submit(function(e) {
+              var value = $("#mat6Input").val();
+              $("#mat6").text(value)
+              $("#mat6Input").removeClass("opt").addClass("done");
+              e.preventDefault();
+          });
+      });
+
+    // Delete Button
+    $("#mat6Delete").on("click", function(d) {
+          $("#mat6Input").val(" ");  
+          d.preventDefault(); 
+    });
+	
 	
     $("#sixDel").on("click", function(del) {
           $("#sixAdd,#fiveDel").removeClass("hide").addClass("show");
           $("#mat6Form,#bud6Form").removeClass("show").addClass("hide");
+		  $("#tot,#tots").text(valueTot5);
           del.preventDefault(); 
     });
-	
-	// Total Sum
-	
 	
 
     // Excel-Export Button
