@@ -6,8 +6,16 @@
 
 body {
   margin: 0;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  background-image: url("http://cdn.wallpapername.com/1440x900/20131207/minimalistic%20tardis%20doctor%20who%20blue%20background_www.wallpapername.com_91.jpg");
 }
 
+.space {
+	margin: 18px;
+	color: SkyBlue;
+}
 
 .norm {
    background-color: lightpink;
@@ -43,13 +51,21 @@ body {
 	display: flex;
 }
 
+#clickExcel {
+	height: 50px;
+}
+
 @media screen and (max-width: 800px) {
     .flex-container {
 		flex-direction: column;
 		width: 100%;
 	}
+
+.space {
+	margin: 0px;
+}	
+	
 }
 
-#clickExcel {
-	height: 50px;
-}
+
+

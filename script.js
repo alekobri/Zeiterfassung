@@ -4,7 +4,10 @@
     var today = new Date();
     var strDate = today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
     $("#date").append(strDate);
-
+	
+	
+	
+	// User Forms
       $(function(){
           $("#custForm").submit(function(e) {
               var value = $("#custInput").val();

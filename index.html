@@ -2,14 +2,14 @@
 <html lang="de">
 <head>
 <title>Zeiterfassung</title>
-<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="content-type" content="text/html; charset=OEM 852">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 
 <div id="export">
-<table style="display:">
+<table style="display: none">
 <thead>
 <tr>
 <th colspan="5" rowspan="7"><img src='https://d2wjy5btw73wdu.cloudfront.net/schweizseiten_com/images/40000_41999/41170.gif' alt=''/></th>
@@ -26,62 +26,63 @@
 <td colspan="2" rowspan="1" id="region">Ort</td>
 <td colspan="1" rowspan="1" id="date"></td>
 </tr>
-<tr>
-<td rowspan="5"></td>
-</tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
 </thead>
 <tbody>
 <tr>
-<th>Beschreibung</th>
+<th colspan="5">Beschreibung</th>
+<th>Auto</th>
 <th>Arbeitszeit</th>
 <th>Preis</th>
-<th>Auto</th>
-<tr></tr>
 </tr>
 <tr>
-<td id="desc">Tätigkeit</td>
+<td id="desc" colspan="5">Tätigkeit</td>
+<td id="car">Auto</td>
 <td id="time">Aufwand</td>
 <td id="price">Preis</td>
-<td id="car">Auto</td>
 </tr>
 </tbody>
 <tfoot>
 <tr>
-<th>Material</th>
+<th colspan="7">Material</th>
 <th>Preis</th>
 </tr>
 <tr>
-<td id="mat"></td>
+<td id="mat" colspan="7"></td>
 <td id="bud"></td>
 </tr>
 <tr>
-<td id="mat2"></td>
+<td id="mat2" colspan="7"></td>
 <td id="bud2"></td>
 </tr>
 <tr>
-<td id="mat3"></td>
+<td id="mat3" colspan="7"></td>
 <td id="bud3"></td>
 </tr>
 <tr>
-<td id="mat4"></td>
+<td id="mat4" colspan="7"></td>
 <td id="bud4"></td>
 </tr>
 <tr>
-<td id="mat5"></td>
+<td id="mat5" colspan="7"></td>
 <td id="bud5"></td>
 </tr>
 <tr>
-<td id="mat6"></td>
+<td id="mat6" colspan="7"></td>
 <td id="bud6"></td>
 </tr>
 <tr>
-<th>Total:</th>
+<th colspan="7">Total:</th>
 <td id="tot">TOT</td>
 </tr>
 </tfoot>
 </table>
 </div>
-
+<h1 class="text-left space">Zeiterfassung</h1>
 <div class="flex-container">
 <div class="1st">
 <form class="navbar-form" id="custForm">
@@ -255,10 +256,14 @@
 </div>
 <br>
 <div>
-Totaler Preis: <div id="tots">0.00</div>
+<h4 class="space">Totaler Preis: <div id="tots">0.00</div></h4>
 <form class="navbar-form row"><button id="clickExcel" type="submit" class="btn btn-primary">Export</button></form>
 </div>
 </div>
+<footer class="navbar-fixed-bottom container-fluid text-center">
+    <p>Written and coded by <a href="https://www.freecodecamp.com/alekobri" target="_blank">A. Lenz</a> &copy; 2018</p>
+</footer>
+<script src="https://unpkg.com/xregexp/xregexp-all.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
