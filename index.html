@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" ng-app="">
 <head>
 <title>Zeiterfassung</title>
 <meta http-equiv="content-type" content="text/html; charset=OEM 852">
@@ -9,7 +9,7 @@
 <body>
 
 <div id="export">
-<table style="display: none">
+<table style="display:">
 <thead>
 <tr>
 <th colspan="5" rowspan="7"><img src='https://d2wjy5btw73wdu.cloudfront.net/schweizseiten_com/images/40000_41999/41170.gif' alt=''/></th>
@@ -20,11 +20,11 @@
 <th colspan="1" rowspan="1">Datum</th>
 </tr>
 <tr>
-<td colspan="2" rowspan="1" id="cust">Vorname Name</td>
-<td colspan="2" rowspan="1" id="street">Strasse Nr.</td>
-<td colspan="1" rowspan="1" id="plz" >PLZ</td>
-<td colspan="2" rowspan="1" id="region">Ort</td>
-<td colspan="1" rowspan="1" id="date"></td>
+<td colspan="2" rowspan="1" id="cust">{{cust}}</td>
+<td colspan="2" rowspan="1" id="street">{{street}}</td>
+<td colspan="1" rowspan="1" id="plz" >{{plz}}</td>
+<td colspan="2" rowspan="1" id="region">{{region}}</td>
+<td colspan="1" rowspan="1" id="date">{{date}}</td>
 </tr>
 <tr></tr>
 <tr></tr>
@@ -40,10 +40,10 @@
 <th>Preis</th>
 </tr>
 <tr>
-<td id="desc" colspan="5">Tätigkeit</td>
-<td id="car">Auto</td>
-<td id="time">Aufwand</td>
-<td id="price">Preis</td>
+<td id="desc" colspan="5">{{desc}}</td>
+<td id="car">{{car}}</td>
+<td id="time">{{time}}</td>
+<td id="price">{{price}}</td>
 </tr>
 </tbody>
 <tfoot>
@@ -52,212 +52,81 @@
 <th>Preis</th>
 </tr>
 <tr>
-<td id="mat" colspan="7"></td>
-<td id="bud"></td>
+<td id="mat" colspan="7">{{mat1}}</td>
+<td id="bud">{{bud1}}</td>
 </tr>
 <tr>
-<td id="mat2" colspan="7"></td>
-<td id="bud2"></td>
+<td id="mat2" colspan="7">{{mat2}}</td>
+<td id="bud2">{{bud2}}</td>
 </tr>
 <tr>
-<td id="mat3" colspan="7"></td>
-<td id="bud3"></td>
+<td id="mat3" colspan="7">{{mat3}}</td>
+<td id="bud3">{{bud3}}</td>
 </tr>
 <tr>
-<td id="mat4" colspan="7"></td>
-<td id="bud4"></td>
+<td id="mat4" colspan="7">{{mat4}}</td>
+<td id="bud4">{{bud4}}</td>
 </tr>
 <tr>
-<td id="mat5" colspan="7"></td>
-<td id="bud5"></td>
+<td id="mat5" colspan="7">{{mat5}}</td>
+<td id="bud5">{{bud5}}</td>
 </tr>
 <tr>
-<td id="mat6" colspan="7"></td>
-<td id="bud6"></td>
+<td id="mat6" colspan="7">{{mat6}}</td>
+<td id="bud6">{{bud6}}</td>
 </tr>
 <tr>
 <th colspan="7">Total:</th>
-<td id="tot">TOT</td>
+<td id="tot">{{ price -- bud1 -- bud2 -- bud3 -- bud4 -- bud5 -- bud6}}</td>
 </tr>
 </tfoot>
 </table>
 </div>
-<h1 class="text-left space">Zeiterfassung</h1>
+<div class="space">
+<h1 class="text-left">Zeiterfassung</h1>
+
 <div class="flex-container">
 <div class="1st">
-<form class="navbar-form" id="custForm">
-<input type="text" class="form-control norm" id="custInput" placeholder="Vor- & Nachname Kunde">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="custDelete"></button>
-</form>
-
-<form class="navbar-form" id="streetForm">
-<input type="text" class="form-control norm" id="streetInput" placeholder="Strasse & Nr.">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="streetDelete"></button>
-</form>
-
-<form class="navbar-form" id="plzForm">
-<input type="text" class="form-control norm" id="plzInput" placeholder="Postleitzahl">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="plzDelete"></button>
-</form>
-
-<form class="navbar-form" id="regionForm">
-<input type="text" class="form-control norm" id="regionInput" placeholder="Ort">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="regionDelete"></button>
-</form>
-
-<form class="navbar-form" id="dateForm">
-<input type="text" class="form-control done" id="dateInput" placeholder="Datum (heute)">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="dateDelete"></button>
-</form>
-
-<form class="navbar-form" id="carForm">
-<input type="text" class="form-control done" id="carInput" placeholder="Auto (1)">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="carDelete"></button>
-</form>
-
-<form class="navbar-form" id="descForm">
-<input type="text" class="form-control norm" id="descInput" placeholder="Beschreibung der Leistung">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="descDelete"></button>
-</form>
-
-<form class="navbar-form" id="timeForm">
-<input type="text" class="form-control norm" id="timeInput" placeholder="Arbeitszeit">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="timeDelete"></button>
-</form>
-
-<form class="navbar-form" id="priceForm">
-<input type="text" class="form-control norm" id="priceInput" placeholder="Leistungskosten">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="priceDelete"></button>
-</form>
+<p><input type="html" ng-model="cust" class="form-control" placeholder="Kunde: Vor- & Nachname"></p>
+<p><input type="html" ng-model="street" class="form-control" placeholder="Kunde: Strasse & Nr."></p>
+<p><input type="html" ng-model="plz" class="form-control" placeholder="Kunde: PLZ"></p>
+<p><input type="html" ng-model="region" class="form-control" placeholder="Kunde: Ort"></p>
+<p><input type="html" ng-model="date" class="form-control" placeholder="Datum"></p>
+<p><input type="html" ng-model="car" class="form-control" placeholder="Anzahl Autos"></p>
+<p><input type="html" ng-model="desc" class="form-control" placeholder="Dienstleistung"></p>
+<p><input type="html" ng-model="time" class="form-control" placeholder="Arbeitszeit"></p>
+<p><input type="html" ng-model="price" class="form-control" placeholder="Preis der DL"></p>
 </div>
-<div class="2nd">
-<form class="navbar-form" id="matForm">
-<input type="text" class="form-control opt" id="matInput" placeholder="Material I">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="matDelete"></button>
-</form>
 
-<form class="navbar-form show" id="budForm">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="budInput" placeholder="Materialkosten I">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="budDelete"></button>
+<div class="2nd space">
+<span class="wrapper rel">
+<p><input type="html" ng-model="mat1" class="form-control" placeholder="Material"></p>
+<p><input type="html" ng-model="bud1" class="form-control" placeholder="Preis von Material"></p>
+</span>
+<span class="wrapper">
+<p><input type="html" ng-model="mat2" class="form-control" placeholder="Material"></p>
+<p><input type="html" ng-model="bud2" class="form-control" placeholder="Preis von Material"></p>
+</span>
+<span class="wrapper">
+<p><input type="html" ng-model="mat3" class="form-control" placeholder="Material"></p>
+<p><input type="html" ng-model="bud3" class="form-control" placeholder="Preis von Material"></p>
+</span>
+<span class="wrapper">
+<p><input type="html" ng-model="mat4" class="form-control" placeholder="Material"></p>
+<p><input type="html" ng-model="bud4" class="form-control" placeholder="Preis von Material"></p>
+</span>
+<span class="wrapper">
+<p><input type="html" ng-model="mat5" class="form-control" placeholder="Material"></p>
+<p><input type="html" ng-model="bud5" class="form-control" placeholder="Preis von Material"></p>
+</span>
+<span class="wrapper">
+<p><input type="html" ng-model="mat6" class="form-control" placeholder="Material"></p>
+<p><input type="html" ng-model="bud6" class="form-control" placeholder="Preis von Material"></p>
+</span>
 </div>
-<button class="btn glyphicon glyphicon-plus btn-info show" id="twoAdd"></button>
-</form>
-
-<form class="navbar-form hide" id="mat2Form">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="mat2Input" placeholder="Material II">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button class="btn glyphicon glyphicon-remove btn-danger" id="mat2Delete"></button>
-</div>
-</form>
-
-<form class="navbar-form hide" id="bud2Form">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="bud2Input" placeholder="Materialkosten II">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud2Delete"></button>
-</div>
-<div class="wrapper">
-<button class="btn glyphicon glyphicon-plus btn-info show" id="threeAdd"></button>
-<button class="btn glyphicon glyphicon-trash btn-danger show" id="twoDel"></button>
-</div>
-</form>
-
-<div class="3rd">
-<form class="navbar-form hide" id="mat3Form">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="mat3Input" placeholder="Material III">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button class="btn glyphicon glyphicon-remove btn-danger" id="mat3Delete"></button>
-</div>
-</form>
-
-<form class="navbar-form hide" id="bud3Form">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="bud3Input" placeholder="Materialkosten III">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud3Delete"></button>
-</div>
-<div class="wrapper">
-<button class="btn glyphicon glyphicon-plus btn-info show" id="fourAdd"></button>
-<button class="btn glyphicon glyphicon-trash btn-danger show" id="threeDel"></button>
-</div>
-</form>
-
-<form class="navbar-form hide" id="mat4Form">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="mat4Input" placeholder="Material IV">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button class="btn glyphicon glyphicon-remove btn-danger" id="mat4Delete"></button>
-</div>
-</form>
-
-<form class="navbar-form hide" id="bud4Form">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="bud4Input" placeholder="Materialkosten IV">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud4Delete"></button>
-</div>
-<div class="wrapper">
-<button class="btn glyphicon glyphicon-plus btn-info show" id="fiveAdd"></button>
-<button class="btn glyphicon glyphicon-trash btn-danger show" id="fourDel"></button>
-</div>
-</form>
-
-<form class="navbar-form hide" id="mat5Form">
-<div class="wrapper">
-	<input type="text" class="form-control opt" id="mat5Input" placeholder="Material V">
-	<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-	<button class="btn glyphicon glyphicon-remove btn-danger" id="mat5Delete"></button>
-</div>
-</form>
-
-<form class="navbar-form hide" id="bud5Form">
-<div class="wrapper">
-	<input type="text" class="form-control opt" id="bud5Input" placeholder="Materialkosten V">
-	<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-	<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud5Delete"></button>
-</div>
-<div class="wrapper">
-<button class="btn glyphicon glyphicon-plus btn-info show" id="sixAdd"></button>
-<button class="btn glyphicon glyphicon-trash btn-danger show " id="fiveDel"></button>
-</div>
-</form>
-
-<form class="navbar-form hide" id="mat6Form">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="mat6Input" placeholder="Material VI">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button class="btn glyphicon glyphicon-remove btn-danger" id="mat6Delete"></button>
-</div>
-</form>
-
-<form class="navbar-form hide" id="bud6Form">
-<div class="wrapper">
-<input type="text" class="form-control opt" id="bud6Input" placeholder="Materialkosten VI">
-<button type="submit" class="btn glyphicon glyphicon-ok btn-success" id="submit" value="submit"></button>
-<button type="submit" class="btn glyphicon glyphicon-remove btn-danger" id="bud6Delete"></button>
-</div>
-<button class="btn glyphicon glyphicon-trash btn-danger show" id="sixDel"></button>
-</form>
-</div>
-</div>
-<br>
 <div>
-<h4 class="space">Totaler Preis: <div id="tots">0.00</div></h4>
-<form class="navbar-form row"><button id="clickExcel" type="submit" class="btn btn-primary">Export</button></form>
+<h4 class="space">Totaler Preis: <div id="tots">{{ price -- bud1 -- bud2 -- bud3 -- bud4 -- bud5 -- bud6}}</div></h4>
+<form class="navbar-form row"><button id="clickExcel" type="submit" class="btn btn-success">Export</button></form>
 </div>
 </div>
 <footer class="navbar-fixed-bottom container-fluid text-center">
@@ -266,7 +135,7 @@
 <script src="https://unpkg.com/xregexp/xregexp-all.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>

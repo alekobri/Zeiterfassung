@@ -37,6 +37,10 @@ body {
    visibility: none;
 }
 
+.form-control {
+	width: 200px;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -45,6 +49,10 @@ body {
 
 .wrapper {
 	display: flex;
+}
+
+.rel {
+	margin-top: -18px;
 }
 
 .navbar-form {
