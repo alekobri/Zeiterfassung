@@ -13,28 +13,17 @@ body {
 }
 
 .space {
-	margin: 18px;
+	margin: 18px 0 0 18px;
 	color: SkyBlue;
 }
 
-.norm {
-   background-color: lightpink;
+.mat {
+	max-width: 65%;
 }
 
-.opt {
-   background-color: peachpuff;
-}
-
-.done{
-   background-color: lightgreen;
-}
-
-.show {
-   visibility: visible;
-}
-
-.hide {
-   visibility: none;
+.bud {
+	max-width: 34%;
+	margin-left: -34%;
 }
 
 .form-control {
@@ -55,12 +44,16 @@ body {
 	margin-top: -18px;
 }
 
-.navbar-form {
-	display: flex;
-}
-
 #clickExcel {
 	height: 50px;
+	margin: 0 0 25px 0;
+}
+
+.footer {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
 }
 
 @media screen and (max-width: 800px) {
@@ -68,11 +61,15 @@ body {
 		flex-direction: column;
 		width: 100%;
 	}
-
-.space {
-	margin: 0px;
-}	
 	
+.footer {
+  position: relative;
+}
+	
+.space {
+	margin: 18px 0 0 0;
+}	
+
 }
 
 

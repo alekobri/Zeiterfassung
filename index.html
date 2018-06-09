@@ -5,6 +5,7 @@
 <meta http-equiv="content-type" content="text/html; charset=OEM 852">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
 
@@ -100,42 +101,41 @@
 
 <div class="2nd space">
 <span class="wrapper rel">
-<p><input type="html" ng-model="mat1" class="form-control" placeholder="Material"></p>
-<p><input type="html" ng-model="bud1" class="form-control" placeholder="Preis von Material"></p>
+<p><input type="html" ng-model="mat1" class="form-control mat" placeholder="Material"></p>
+<p><input type="html" ng-model="bud1" class="form-control bud" placeholder="Kosten"></p>
 </span>
 <span class="wrapper">
-<p><input type="html" ng-model="mat2" class="form-control" placeholder="Material"></p>
-<p><input type="html" ng-model="bud2" class="form-control" placeholder="Preis von Material"></p>
+<p><input type="html" ng-model="mat2" class="form-control mat" placeholder="Material"></p>
+<p><input type="html" ng-model="bud2" class="form-control bud" placeholder="Kosten"></p>
 </span>
 <span class="wrapper">
-<p><input type="html" ng-model="mat3" class="form-control" placeholder="Material"></p>
-<p><input type="html" ng-model="bud3" class="form-control" placeholder="Preis von Material"></p>
+<p><input type="html" ng-model="mat3" class="form-control mat" placeholder="Material"></p>
+<p><input type="html" ng-model="bud3" class="form-control bud" placeholder="Kosten"></p>
 </span>
 <span class="wrapper">
-<p><input type="html" ng-model="mat4" class="form-control" placeholder="Material"></p>
-<p><input type="html" ng-model="bud4" class="form-control" placeholder="Preis von Material"></p>
+<p><input type="html" ng-model="mat4" class="form-control mat" placeholder="Material"></p>
+<p><input type="html" ng-model="bud4" class="form-control bud" placeholder="Kosten"></p>
 </span>
 <span class="wrapper">
-<p><input type="html" ng-model="mat5" class="form-control" placeholder="Material"></p>
-<p><input type="html" ng-model="bud5" class="form-control" placeholder="Preis von Material"></p>
+<p><input type="html" ng-model="mat5" class="form-control mat" placeholder="Material"></p>
+<p><input type="html" ng-model="bud5" class="form-control bud" placeholder="Kosten"></p>
 </span>
 <span class="wrapper">
-<p><input type="html" ng-model="mat6" class="form-control" placeholder="Material"></p>
-<p><input type="html" ng-model="bud6" class="form-control" placeholder="Preis von Material"></p>
+<p><input type="html" ng-model="mat6" class="form-control mat" placeholder="Material"></p>
+<p><input type="html" ng-model="bud6" class="form-control bud" placeholder="Kosten"></p>
 </span>
 </div>
 <div>
 <h4 class="space">Totaler Preis: <div id="tots">{{ price -- bud1 -- bud2 -- bud3 -- bud4 -- bud5 -- bud6}}</div></h4>
-<form class="navbar-form row"><button id="clickExcel" type="submit" class="btn btn-success">Export</button></form>
+<form class="navbar-form"><button id="clickExcel" type="submit" class="btn btn-success">Export</button></form>
 </div>
 </div>
-<footer class="navbar-fixed-bottom container-fluid text-center">
+<footer class="footer">
     <p>Written and coded by <a href="https://www.freecodecamp.com/alekobri" target="_blank">A. Lenz</a> &copy; 2018</p>
 </footer>
 <script src="https://unpkg.com/xregexp/xregexp-all.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
